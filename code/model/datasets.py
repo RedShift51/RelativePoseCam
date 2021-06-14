@@ -19,6 +19,7 @@ class datasetGetter(data.Dataset):
         self.model_dirs_ = model_dirs
         self.imgs_dirs_ = [os.path.join(base_path, k, "images") for k in self.model_dirs_]
         self.mode = mode
+        np.random.seed(1)
 
         markups = [os.path.join(base_path, k, "model_txt", "images.txt") for k in self.model_dirs_]
         self.storage_ = []

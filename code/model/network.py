@@ -17,12 +17,14 @@ class featureExtractor(nn.Module):
 class dataMatcher(nn.Module):
     def __init__(self):
         super(dataMatcher, self).__init__()
-        self.conv1 = nn.Conv2d(1024, 256, 3)
+        self.conv1 = nn.Conv2d(1024, 512, 3, stride=2)
         self.relu1 = nn.ReLU()
-        self.conv2 = nn.Conv2d(256, 128, 3)
+        self.conv2 = nn.Conv2d(512, 256, 3, stride=2)
         self.relu2 = nn.ReLU()
+        self.conv3 = nn.Conv2d(512, 128, 3, stride=2)
+        self.relu3 = nn.ReLU()
 
-        self.conv3 = nn.Conv2d(128, 6, 1)
+        self.conv4 = nn.Conv2d(128, 6, 1)
 
         self.act_out = nn.Tanh()
 
@@ -30,9 +32,11 @@ class dataMatcher(nn.Module):
         y = self.conv1(x)
         y = self.relu1(y)
         y = self.conv2(y)
-        y = self.relu2(y)
-        y = F.max_pool2d(y, y.size()[2:])
+        y = self.relu2(y) 
         y = self.conv3(y)
+        y = self.relu3(y)
+        y = F.max_pool2d(y, y.size()[2:])
+        y = self.conv4(y)
         y = y.view(-1, 6)
 
         return 2*np.pi*self.act_out(y[:, :3]), y[:, 3:]

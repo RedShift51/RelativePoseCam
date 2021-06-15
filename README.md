@@ -23,8 +23,8 @@ If I use MSE, the NN will adjust to relatively big number of outliers.
 
 Example of inference and training / validation loss you can see below.
 
-![0](https://user-images.githubusercontent.com/29106459/122049565-4004d800-cdeb-11eb-9023-99af634ef3a5.png =500x200)
-![10](https://user-images.githubusercontent.com/29106459/122049581-44c98c00-cdeb-11eb-9128-1ed13e283c39.png =500x200)
+![0](https://user-images.githubusercontent.com/29106459/122049565-4004d800-cdeb-11eb-9023-99af634ef3a5.png)
+![10](https://user-images.githubusercontent.com/29106459/122049581-44c98c00-cdeb-11eb-9128-1ed13e283c39.png)
 
 
 angle difference (radians) [-0.2180,  0.2343,  0.2135]

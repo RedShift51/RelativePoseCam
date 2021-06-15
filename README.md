@@ -14,9 +14,11 @@ the data. Then in code/model path you can run train_eval.py script and provide p
 dataset class.
 
 
-Solution. For this task I chase resnet-34 architecture for extract features for each image in current pair. 
+Solution. For this task I used resnet-34 architecture for extract features for each image in current pair. 
 Then I concatenate two feature tensors and provide it as input for 3-layer fully convolutional NN, 
 consists of convolutional layers. The final layer produces 6-dimanesional vector (first 3 components - 
 for angles, activation function - tanh, second 3 components - for displacement). The loss function is MAE, 
 because I used videos from smartphone, and quality of frames in sample may be relatively bad. 
 If I use MSE, the NN will adjust to relatively big number of outliers.
+
+Example of inference and training / validation loss you can see below.

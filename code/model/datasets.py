@@ -89,7 +89,9 @@ class datasetGetter(data.Dataset):
         idx2 = max(actual_idx, second_idx)
 
         image1 = cv2.cvtColor(cv2.imread(self.fnames_[idx1]), cv2.COLOR_BGR2RGB).astype(float)
+        image1 /= 255.
         image2 = cv2.cvtColor(cv2.imread(self.fnames_[idx2]), cv2.COLOR_BGR2RGB).astype(float)
+        image2 /= 255.
         diff = self.storage_[idx2] - self.storage_[idx1]
 
         #reverse = 0 if actual_idx < self.count_elems_ else 1

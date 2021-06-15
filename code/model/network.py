@@ -21,7 +21,7 @@ class dataMatcher(nn.Module):
         self.relu1 = nn.ReLU()
         self.conv2 = nn.Conv2d(512, 256, 3, stride=2)
         self.relu2 = nn.ReLU()
-        self.conv3 = nn.Conv2d(512, 128, 3, stride=2)
+        self.conv3 = nn.Conv2d(256, 128, 3, stride=2)
         self.relu3 = nn.ReLU()
 
         self.conv4 = nn.Conv2d(128, 6, 1)
